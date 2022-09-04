@@ -5,6 +5,7 @@
   gather_facts: yes
   tasks:
   - name: Clone the template
+    delegate_to: localhost
     vmware_guest:
       hostname: vcenter.example.com
       username: administrator@vsphere.local
