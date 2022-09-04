@@ -1,7 +1,7 @@
 ---
 - name: info vm demo
   hosts: localhost
-  become: true
+  become: false
   gather_facts: true
   collections:
     - community.vmware
