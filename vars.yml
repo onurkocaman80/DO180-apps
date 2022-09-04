@@ -1,0 +1,7 @@
+---
+vcenter_hostname: "vcenter.example.com"
+vcenter_datacenter: "Datacenter"
+vcenter_validate_certs: false
+vcenter_username: "administrator@vsphere.local"
+vcenter_password: "1234Qwer@"
+vm_name: "deneme01"
