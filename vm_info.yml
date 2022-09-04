@@ -3,7 +3,6 @@
   hosts: localhost
   become: false
   gather_facts: false
-  delegate_to: localhost
   collections:
     - community.vmware
   pre_tasks:
