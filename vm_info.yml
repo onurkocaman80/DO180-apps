@@ -8,8 +8,8 @@
   pre_tasks:
     - include_vars: vars.yml
   tasks:
-    delegate_to: "192.168.223.148"
     - name: get VM info
+      delegate_to: "192.168.223.148"
       vmware_guest_info:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
@@ -19,5 +19,6 @@
         name: "{{ vm_name }}"
       register: detailed_vm_info
     - name: print VM info
+      delegate_to: "192.168.223.148"
       ansible.builtin.debug:
         var: detailed_vm_info
