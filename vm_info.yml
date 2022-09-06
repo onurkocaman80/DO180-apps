@@ -3,13 +3,11 @@
   hosts: localhost
   become: false
   gather_facts: true
-  collections:
-    - community.vmware
   pre_tasks:
     - include_vars: vars.yml
   tasks:
     - name: get VM info
-      vmware_guest_info:
+      community.vmware.vmware_guest_info:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
