@@ -1,9 +1,16 @@
 ---
 - name: Gather info from standalone ESXi server having datacenter as 'ha-datacenter'
-  community.vmware.vmware_guest_info:
-    hostname: "{{ vcenter_hostname }}"
-    username: "{{ vcenter_username }}"
-    password: "{{ vcenter_password }}"
-    datacenter: Datacenter
-  delegate_to: localhost
-  register: info
+  hosts: localhost
+  become: false
+  gather_facts: true
+  pre_tasks:
+    - include_vars: vars.yml
+  tasks:
+    - name: Gather info from standalone ESXi server having datacenter as 'ha-datacenter'
+      community.vmware.vmware_guest_info:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        datacenter: Datacenter
+      delegate_to: localhost
+      register: info
