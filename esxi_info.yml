@@ -1,3 +1,4 @@
+---
 - name: Gather info from standalone ESXi server having datacenter as 'ha-datacenter'
   community.vmware.vmware_guest_info:
     hostname: "{{ vcenter_hostname }}"
